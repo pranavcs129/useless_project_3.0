@@ -48,7 +48,7 @@ export async function render(container) {
         </div>
 
         <h1 class="hero__title">
-          Knowledge<br>has no <span class="accent">species</span> limit.
+          The future<br>belongs to every <span class="accent">species</span>.
         </h1>
 
         <p class="hero__description">
