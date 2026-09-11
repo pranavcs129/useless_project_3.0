@@ -1,0 +1,151 @@
+/* ============================================
+   BUGLEARN Design Tokens
+   ============================================ */
+
+:root {
+  /* ---- Primary Backgrounds ---- */
+  --bg-primary: #F8F5F0;
+  --bg-secondary: #F3EEE8;
+  --bg-hero: #F0EBE4;
+
+  /* ---- Soft Section Backgrounds ---- */
+  --bg-lavender: #F3F0F8;
+  --bg-cream: #FDF9F0;
+  --bg-green: #F0F5F1;
+  --bg-blue: #EFF4F8;
+  --bg-blush: #FBF0F0;
+  --bg-mint: #F0F8F5;
+
+  /* ---- Accent Colours ---- */
+  --accent-sage: #7A9E7E;
+  --accent-forest: #4A7C59;
+  --accent-forest-dark: #2D5A3D;
+  --accent-violet: #8B7EB8;
+  --accent-lavender: #B4A7D6;
+  --accent-coral: #E8856C;
+  --accent-yellow: #E8C547;
+  --accent-blue: #7BA7C9;
+  --accent-blush: #D4918E;
+  --accent-gold: #C9A84C;
+
+  /* ---- Department Accent Colours ---- */
+  --dept-ant: #C17840;
+  --dept-cockroach: #8B6F4E;
+  --dept-spider: #6B5B8A;
+  --dept-bee: #D4A824;
+  --dept-mosquito: #5A7A6B;
+  --dept-butterfly: #C47AAA;
+  --dept-fly: #7A8B5A;
+  --dept-ladybug: #C25B5B;
+
+  /* ---- Text ---- */
+  --text-primary: #2C2C2C;
+  --text-secondary: #5A5A5A;
+  --text-tertiary: #8A8A8A;
+  --text-inverse: #FAF8F5;
+  --text-accent: var(--accent-forest);
+
+  /* ---- Borders ---- */
+  --border-light: #E8E4DF;
+  --border-medium: #D4CFC8;
+  --border-focus: var(--accent-forest);
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px rgba(44, 44, 44, 0.04);
+  --shadow-sm: 0 2px 8px rgba(44, 44, 44, 0.06);
+  --shadow-md: 0 4px 16px rgba(44, 44, 44, 0.08);
+  --shadow-lg: 0 8px 32px rgba(44, 44, 44, 0.1);
+  --shadow-xl: 0 16px 48px rgba(44, 44, 44, 0.12);
+  --shadow-float: 0 12px 40px rgba(44, 44, 44, 0.15);
+
+  /* ---- Card Surface ---- */
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(27, 36, 28, 0.06);
+  --card-shadow: 0 6px 24px rgba(35, 30, 25, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  --card-shadow-hover: 0 16px 40px rgba(35, 30, 25, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  /* ---- Typography ---- */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.25rem;
+  --text-6xl: 4rem;
+  --text-hero: 5rem;
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+  --tracking-widest: 0.16em;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ---- Spacing ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+
+  /* ---- Layout ---- */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+  --container-max: 1600px;
+
+  /* ---- Borders ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* ---- Transitions ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+
+  /* ---- Z-Index Layers ---- */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-navbar: 500;
+  --z-modal-backdrop: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}
