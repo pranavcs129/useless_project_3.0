@@ -12,10 +12,143 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Preload Logo WebM for immediate playback -->
+  <link rel="preload" href="/logo/logo-Picsart-BackgroundRemover.webm" as="video" type="video/webm" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Critical Initial Loader Styles -->
+  <style>
+    .app-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FAF8F5;
+      background-image:
+        radial-gradient(ellipse 65% 55% at 30% 25%, rgba(232, 197, 71, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 75% 75%, rgba(180, 167, 214, 0.08) 0%, transparent 70%);
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1), visibility 550ms cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+    .app-loader.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .app-loader__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .app-loader__logo-wrap {
+      position: relative;
+      width: 72px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .app-loader__logo-fallback {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      opacity: 0.92;
+      pointer-events: none;
+      transition: opacity 300ms ease;
+    }
+    .app-loader__logo {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: transparent;
+      pointer-events: none;
+    }
+    .app-loader__brand {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #2C2C2C;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .app-loader__track {
+      width: 140px;
+      height: 2px;
+      background: rgba(74, 124, 89, 0.14);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 16px 0 12px;
+      position: relative;
+    }
+    .app-loader__bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: #4A7C59;
+      border-radius: 999px;
+      transition: width 280ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .app-loader__message {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #8A8A8A;
+      margin: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .app-loader {
+        transition: none !important;
+      }
+      .app-loader__bar {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- BUGLEARN Initial Application Loading Screen -->
+  <div id="app-loader" class="app-loader" role="status" aria-live="polite">
+    <div class="app-loader__content">
+      <div class="app-loader__logo-wrap">
+        <svg class="app-loader__logo-fallback" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 9 C14.8 5.5, 11 3.5, 7.5 5.5 C4.5 7.2, 4 12, 7.5 15.5 C10 18, 13.5 18, 15.5 16.5 L15.5 24 C15.5 24.6, 16.5 24.6, 16.5 24 L16.5 16.5 C18.5 18, 22 18, 24.5 15.5 C28 12, 27.5 7.2, 24.5 5.5 C21 3.5, 17.2 5.5, 16 9 Z" fill="#2C2C2C" />
+          <circle cx="16" cy="6.5" r="1.4" fill="#2C2C2C" />
+          <path d="M15 5.5 Q13 3 11 3.5 M17 5.5 Q19 3 21 3.5" stroke="#2C2C2C" stroke-width="0.8" stroke-linecap="round" fill="none" />
+        </svg>
+        <video
+          class="app-loader__logo"
+          src="/logo/logo-Picsart-BackgroundRemover.webm"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+      </div>
+      <div class="app-loader__brand">BUGLEARN</div>
+      <div class="app-loader__track" aria-hidden="true">
+        <div class="app-loader__bar" id="app-loader-bar"></div>
+      </div>
+      <p class="app-loader__message">Preparing the colony...</p>
+    </div>
+  </div>
+
   <div id="app"></div>
   <div id="modal-root"></div>
   <div id="toast-root"></div>

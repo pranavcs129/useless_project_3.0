@@ -32,6 +32,56 @@ function getFrameUrl(index) {
   return `/buga/ezgif-frame-${pad}.jpg`;
 }
 
+// Module-level cache for preloaded hero buffer frames
+const sharedFrameCache = new Map();
+
+/**
+ * Preload the first N frames for the hero animation canvas.
+ * @param {number} count - Number of initial frames to load (default 10)
+ * @param {Function} [onProgress] - Optional progress callback
+ * @returns {Promise<Image[]>}
+ */
+export function preloadHeroBuffer(count = 10, onProgress = null) {
+  const targetCount = Math.min(count, TOTAL_FRAMES);
+  const promises = [];
+  let completed = 0;
+
+  for (let i = 1; i <= targetCount; i++) {
+    if (sharedFrameCache.has(i)) {
+      completed++;
+      if (onProgress) onProgress(completed, targetCount);
+      continue;
+    }
+
+    const p = new Promise((resolve) => {
+      const img = new Image();
+      img.decoding = 'async';
+      img.src = getFrameUrl(i);
+      img.onload = () => {
+        sharedFrameCache.set(i, img);
+        completed++;
+        if (onProgress) onProgress(completed, targetCount);
+        resolve(img);
+      };
+      img.onerror = () => {
+        completed++;
+        if (onProgress) onProgress(completed, targetCount);
+        resolve(null);
+      };
+    });
+    promises.push(p);
+  }
+
+  return Promise.all(promises);
+}
+
+/**
+ * Check if the hero Frame 1 is already cached and ready.
+ */
+export function isHeroFrameOneReady() {
+  return sharedFrameCache.has(1);
+}
+
 /**
  * Mount and initialize the hero frame animation on a container.
  * @param {HTMLElement} heroElement - The hero section DOM element
@@ -54,6 +104,13 @@ export function initHeroAnimation(heroElement) {
   let isDestroyed = false;
   let isPlaying = true;
   let isVisible = true;
+
+  // Hydrate from sharedFrameCache if available
+  for (const [idx, img] of sharedFrameCache.entries()) {
+    frames[idx] = img;
+    isLoaded[idx] = true;
+    loadedCount++;
+  }
 
   let playbackTime = 0; // accumulated playback time in ms
   let lastTimestamp = 0;
@@ -215,6 +272,12 @@ export function initHeroAnimation(heroElement) {
 
   // ---- Progressive Loading Queue ----
   function loadSingleFrame(idx) {
+    if (sharedFrameCache.has(idx)) {
+      const cached = sharedFrameCache.get(idx);
+      frames[idx] = cached;
+      isLoaded[idx] = true;
+      return Promise.resolve(cached);
+    }
     return new Promise((resolve) => {
       if (isDestroyed) return resolve();
       const img = new Image();
@@ -222,12 +285,14 @@ export function initHeroAnimation(heroElement) {
       img.src = getFrameUrl(idx);
       img.onload = () => {
         if (isDestroyed) return resolve();
+        sharedFrameCache.set(idx, img);
         frames[idx] = img;
         isLoaded[idx] = true;
         loadedCount++;
 
         // Immediately paint Frame 1 on initial load
         if (idx === 1 && !lastTimestamp) {
+          updateDimensions();
           renderFrame(1);
         }
         resolve();
@@ -334,6 +399,12 @@ export function initHeroAnimation(heroElement) {
     { threshold: 0.05 }
   );
   observer.observe(heroElement);
+
+  // Paint Frame 1 immediately if available in cache for zero-latency first visual
+  updateDimensions();
+  if (isLoaded[1]) {
+    renderFrame(1);
+  }
 
   // Start preloading and start animation loop
   startPreloader();

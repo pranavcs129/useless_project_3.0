@@ -8,6 +8,7 @@ import './styles/pages.css';
 import './styles/dashboard.css';
 
 import { addRoute, initRouter } from './router.js';
+import { initAppLoader } from './utils/loader.js';
 
 // ---- Route Registration ----
 // Each route maps to a page module's render function.
@@ -114,6 +115,7 @@ addRoute('404', async (container) => {
 // ---- Initialize ----
 const app = document.getElementById('app');
 initRouter(app);
+initAppLoader();
 
 // ---- Loading Messages (Easter Egg) ----
 const loadingMessages = [

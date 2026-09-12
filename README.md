@@ -2,34 +2,34 @@
 
 
 
-# [Project Name] 🎯
+# [BUGLEARN] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [GLITCH]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
+- Team Lead: [Sreehari K A] - [adi shankara]
+- Member 2: [Pranav C S] - [adi shankara]
 - Member 3: [Name] - [College]
 
 ### Project Description
-[2-3 lines about what your project does]
+BUGLEARN is a fully functional online learning platform built exclusively for insects. It provides courses, lessons, quizzes, assignments, progress tracking, achievements, and certificates — because apparently insects need higher education too.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Insects have been unfairly excluded from modern education and career development. Ants lack access to cybersecurity, spiders have been denied web development opportunities, and cockroaches have somehow never been offered Chemical Engineering.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+BUGLEARN gives every insect access to a complete academic ecosystem designed specifically for their completely unnecessary educational needs. From Spider Web Development to Antivirus, every course takes real academic concepts and applies them to the world's smallest students — with absolutely no practical reason whatsoever.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [HTML5, CSS3, JavaScript (ES6+)]
+- [Vite]
+- [None (Vanilla JS)]
+- [Vite 6, Git, GitHub, Antigravity]
 
 For Hardware:
 - [List main components]
@@ -39,23 +39,27 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+```bash
+npm install
+```
 
 # Run
-[commands]
+```bash
+npm run dev
+```
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Home Page](./public/screenshort/Home%20page.jpeg)
+*BUGLEARN Homepage with animated insect hero canvas, dynamic species tagline, and interactive course navigation*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Departments Page](./public/screenshort/departments%20page.jpeg)
+*BUGLEARN Academic Departments offering specialized courses across various insect species*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Web Development Page](./public/screenshort/Web%20development%20page.jpeg)
+*Spider Web Development department and curriculum detail page with modules, lessons, and interactive learning*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
