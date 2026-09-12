@@ -10,8 +10,10 @@
 
 
 ### Team Members
-- Team Lead: [Sreehari K A] - [adi shankara]
-- Member 2: [Pranav C S] - [adi shankara]
+- Team Lead: [Sreehari K A] - [
+Adi Shankara Institute of Engineering and Technology]
+- Member 2: [Pranav C S] - [
+Adi Shankara Institute of Engineering and Technology]
 - Member 3: [Name] - [College]
 
 ### Project Description
