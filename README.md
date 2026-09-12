@@ -15,21 +15,28 @@
 - Member 3: [Name] - [College]
 
 ### Project Description
-BUGLEARN is a fully functional online learning platform built exclusively for insects. It provides courses, lessons, quizzes, assignments, progress tracking, achievements, and certificates — because apparently insects need higher education too.
+[BUGLEARN is a fully functional online learning platform built exclusively for insects.
+It provides courses, lessons, quizzes, assignments, progress tracking, achievements, and
+certificates — because apparently insects need higher education too.]
 
 ### The Problem (that doesn't exist)
-Insects have been unfairly excluded from modern education and career development. Ants lack access to cybersecurity, spiders have been denied web development opportunities, and cockroaches have somehow never been offered Chemical Engineering.
+[Insects have been unfairly excluded from modern education and career development.
+Ants lack access to cybersecurity, spiders have been denied web development opportunities,
+and cockroaches have somehow never been offered Chemical Engineering.]
 
 ### The Solution (that nobody asked for)
-BUGLEARN gives every insect access to a complete academic ecosystem designed specifically for their completely unnecessary educational needs. From Spider Web Development to Antivirus, every course takes real academic concepts and applies them to the world's smallest students — with absolutely no practical reason whatsoever.
+[BUGLEARN gives every insect access to a complete academic ecosystem designed specifically
+for their completely unnecessary educational needs. From Spider Web Development to Antiv
+irus, every course takes real academic concepts and applies them to the world's smallest
+students — with absolutely no practical reason whatsoever.]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
 - [HTML5, CSS3, JavaScript (ES6+)]
-- [Vite]
-- [None (Vanilla JS)]
-- [Vite 6, Git, GitHub, Antigravity]
+- [vite]
+- [None]
+- [Vite 6,Git,GitHub,Antigravity]
 
 For Hardware:
 - [List main components]
@@ -62,8 +69,8 @@ For Software:
 *Spider Web Development department and curriculum detail page with modules, lessons, and interactive learning*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![BUGLEARN System Workflow](./public/screenshort/workflow.png)
+*BUGLEARN System Workflow: From insect student interaction and Vite + Vanilla JS frontend, routing, course/department data, learning features, LocalStorage persistence, to the responsive UI*
 
 For Hardware:
 
